@@ -1,0 +1,892 @@
+<style>
+    .about-des {
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+        max-width: 50rem;
+        color: grey;
+        opacity: 0;
+        animation: fadetext 4s ease-in-out forwards;
+        margin-left: 2rem;
+        margin-top: 1rem;
+        padding: 2rem;
+    }
+
+    .about-des p {
+        font-size: 1.3rem;
+        margin-left: 3rem;
+        padding: 2rem;
+        text-align: justify;
+    }
+
+    .card {
+        display: flex;
+        /* flex-direction: column; */
+        /* justify-content: space-between; */
+        align-items: center;
+        padding: 1rem 5rem;
+        margin-top: 2rem;
+        animation: fadetext 5s ease-in-out forwards;
+        gap: 2rem;
+        inset: 3px 3px 3px 3px;
+        /* background-color: black; */
+        border-radius: 50px;
+        transition: 0.5s ease;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .card div {
+        width: 15rem;
+        height: 5rem;
+        /* background-color: red; */
+        border-radius: 10%;
+
+        background: linear-gradient(to right, #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+        background-size: 200%;
+        animation: animationGradiant 15s linear infinite;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+
+    }
+
+
+    .card div:hover {
+        transform: scale(1.1);
+    }
+
+
+
+    #full,
+    #back,
+    #front {
+        /* position: absolute; */
+        inset: 3px 3px 3px 3px;
+        background-color: black;
+        border-radius: 50px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transition: 0.5s ease;
+        cursor: pointer;
+        color: white;
+        font-weight: bolder;
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .anime-container {
+        position: absolute;
+        top: 0;
+        right: -30%;
+        margin-top: 6rem;
+    }
+
+    #projects h1,
+    .contact-container h1 {
+        font-size: 4rem;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(to right, rgb(103, 35, 212) 25%, #0dcde2 50%, #ffffff 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: Gradiant 3s linear infinite, fadetext 5s ease-in-out forwards;
+    }
+
+    #projects h3,
+    .contact-container h3 {
+        font-size: 2rem;
+        text-align: center;
+        /* padding: 2rem; */
+        animation: fadetext 5s ease-in-out forwards;
+
+    }
+
+
+
+    .tech {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 1rem;
+        margin-top: 3rem;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        margin-bottom: 2rem;
+        background: url(Image/herobg.png);
+        animation: fadetext 7s ease-in-out forwards;
+
+    }
+
+    .tech div img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        animation: fadetext 7s ease-in-out forwards;
+    }
+
+
+    .des {
+        /* font-size: 1.2rem; */
+        letter-spacing: 0.05em;
+        /* max-width: 50rem; */
+        color: grey;
+        opacity: 0;
+        animation: fadetext 4s ease-in-out forwards;
+        /* margin-left: 2rem; */
+        /* margin-top: 1rem; */
+        /* padding: 2rem; */
+
+
+        font-size: 1.3rem;
+        margin-left: 3rem;
+        padding: 2rem;
+        text-align: justify;
+    }
+
+
+
+
+
+
+    /* card design */
+
+    .flip-card {
+        background-color: transparent;
+        width: 220px;
+        height: 254px;
+        perspective: 1000px;
+        /* font-family: sans-serif; */
+    }
+
+    .title {
+        font-size: 1.5em;
+        font-weight: 900;
+        text-align: center;
+        margin: 0;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border: 2px solid rgb(1, 5, 120);
+        border-radius: 1rem;
+    }
+
+    .flip-card-front {
+        background: linear-gradient(120deg, rgb(0, 200, 255) 60%, rgb(255, 231, 222) 88%,
+                rgb(255, 211, 195) 40%, rgba(143, 0, 245, 0.975) 48%);
+        color: rgb(0, 0, 0);
+    }
+
+    .flip-card-back {
+        background: linear-gradient(120deg, rgb(0, 200, 255) 60%, rgb(255, 231, 222) 88%,
+                rgb(255, 211, 195) 40%, rgba(143, 0, 245, 0.975) 48%);
+        color: rgb(0, 0, 0);
+        transform: rotateY(180deg);
+        font-weight: bold;
+    }
+
+
+    .project-card {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+
+    .project-img {
+        background-color: transparent;
+        /* width: 300px; */
+        height: 210px;
+        perspective: 1000px;
+        object-fit: contain;
+        border-radius: 8px;
+        /* animation: fadetext 7s ease-in-out forwards; */
+    }
+
+
+
+
+
+    /* Contact form style */
+
+    #Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 80vh;
+        background-color: #000000;
+        margin-left: -50rem;
+        animation: fadetext 3s ease-in-out forwards;
+        /* z-index: -2000; */
+    }
+
+    #rays {
+        z-index: 2;
+        position: relative;
+        bottom: -1.5em;
+        animation: rays 2s ease-in-out infinite;
+    }
+
+    .form {
+        position: relative;
+        /* top: -2rem; */
+        padding: 2rem;
+        /* z-index: 3; */
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        border: 2px solid #ffffff;
+        background: rgba(59, 3, 148, 0.762);
+        box-shadow: 0px 0px 64px 0px #2d04ff inset, 0px 0px 16px #a02dffa6;
+        backdrop-filter: blur(3.5px);
+        gap: 1em;
+        animation: float 2s ease-in-out infinite;
+        width: 300px;
+        /* z-index: 2000; */
+    }
+
+    #login-lable {
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 8px;
+        text-shadow: 0px 0px 16px rgb(243, 243, 243);
+    }
+
+    .form-content {
+        height: 3em;
+        padding: 2px 8px;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-weight: bold;
+        border-radius: 6px;
+        /* border: 0px solid transparent; */
+        background: rgba(129, 97, 255, 0.486);
+        /* box-shadow: 0px 0px 1px 3px #fcfdfd inset, 0px 4px 4px 0px #181a6040; */
+        text-shadow: 0px 1px 4px rgb(243, 243, 243);
+        animation: fadetext 3s ease-in-out forwards;
+        /* z-index: 2000; */
+    }
+
+    .form-content:focus-visible {
+        outline: none;
+        background: rgba(139, 189, 255, 0.59);
+        box-shadow: 0px 0px 1px 4px #9ee5e3;
+    }
+
+    .form-content:hover {
+        background: rgba(139, 189, 255, 0.59);
+    }
+
+    ::placeholder {
+        font-weight: 300;
+        color: white;
+        letter-spacing: 0.1rem;
+        text-shadow: 0px 1px 5px rgb(66, 66, 66);
+        padding-top: 10px;
+    }
+
+    .form button {
+        cursor: pointer;
+        height: 3.5rem;
+        color: white;
+        font-size: 1.5em;
+        letter-spacing: 0.3rem;
+        border: 2px solid white;
+        background: linear-gradient(144deg, #9c11ffce, #2000eeb6 50%, #15efffbb);
+        border-radius: 50px;
+    }
+
+    .form button:hover {
+        position: relative;
+        bottom: 4px;
+        background: linear-gradient(144deg, #9c11ff, #2000ee 50%, #15fff3);
+        box-shadow: 0px 0px 2px 2px #ffffff;
+    }
+
+    @keyframes float {
+        0% {
+            top: 0px;
+        }
+
+        50% {
+            top: 20px;
+        }
+
+        100% {
+            top: 0px;
+        }
+    }
+
+    @keyframes rays {
+
+        0%,
+        100% {
+            opacity: 0.6;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    #status {
+        color: white;
+        margin-top: 1em;
+        text-shadow: 0 0 5px #00ffff;
+    }
+
+
+    /* footer contact */
+
+    .social-footer {
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        /* flex-wrap: wrap; */
+        gap: 2rem;
+        padding: 2rem;
+        /* width: 25rem; */
+        margin-top: 3rem;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        margin-bottom: 2rem;
+        /* background: url(Image/herobg.png); */
+        animation: fadetext 7s ease-in-out forwards;
+    }
+
+
+    .social-footer div img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 8px;
+        animation: fadetext 7s ease-in-out forwards;
+        cursor: pointer;
+    }
+
+
+    .robot-3d2 {
+        position: absolute;
+        /* top: 0; */
+        margin-top: -47rem;
+        /* z-index: 10; */
+        /* float: left; */
+        margin-left: 25rem;
+    }
+
+    .robo-container2 {
+        /* height: 40vh; */
+        /* width: 40vw; */
+        z-index: -2000;
+        /* background-color: red; */
+        /* float: right; */
+    }
+
+
+    @keyframes fade-up-on-scroll {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Apply to existing classes */
+    :is(.card, .tech, .flip-card, .about-des, .des) {
+        animation-name: fade-up-on-scroll;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+
+        /* Experimental scroll trigger */
+        animation-timeline: view();
+        animation-range: entry 20% cover 30%;
+    }
+
+</style>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Image/Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <title>About</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body
+    style="overflow-x: hidden; overflow-y: auto; scroll-behavior: smooth; animation: fadetext 3s ease-in-out forwards;">
+    <img class="image-gradiant" src="./Image/gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+
+    <div class="container">
+        <header>
+            <img class="image-logo" src="./Image/Logo.png" alt="gradient">
+            <h1 class="logo">Dhanu</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <div class="about-des">
+            <h1>OVERVIEW</h1>
+            <p>Hi, I'm Dhanu, passionate Software Engineer specializing in web and app development, using
+                technologies like HTML, CSS, JavaScript, Python, Kotlin, C#, and PHP. Experienced in tools like Git,
+                MongoDB, and phpMyAdmin, I enjoys exploring IoT and Machine Learning.</p>
+        </div>
+
+        <div class="card">
+            <div id="full">Full-Stack <br>Developer</div>
+            <div id="front">Front-End <br>Developer</div>
+            <div id="back">Back-End <br>Developer</div>
+        </div>
+
+        <div class="an-container"><spline-viewer class="anime-container"
+                url="https://prod.spline.design/X8mLe3Fk-rmGMf7u/scene.splinecode"></spline-viewer>
+        </div>
+
+    </div>
+
+
+    <div id="projects">
+        <h1>MY TECHSTACK</h1>
+        <div class="tech">
+            <div><img src="./Image/Techstack/html.png" alt=""></div>
+            <div><img src="./Image/Techstack/css.png" alt=""></div>
+            <div><img src="./Image/Techstack/javascript.png" alt=""></div>
+            <div><img src="./Image/Techstack/java.png" alt=""></div>
+            <div><img src="./Image/Techstack/kotlin.png" alt=""></div>
+            <div><img src="./Image/Techstack/firebase.png" alt=""></div>
+            <div><img src="./Image/Techstack/ai.png" alt=""></div>
+            <div><img src="./Image/Techstack/automation.png" alt=""></div>
+            <div><img src="./Image/Techstack/figma.png" alt=""></div>
+            <div><img src="./Image/Techstack/firebase.png" alt=""></div>
+            <div><img src="./Image/Techstack/git.png" alt=""></div>
+            <div><img src="./Image/Techstack/machine-learning.png" alt=""></div>
+            <div><img src="./Image/Techstack/mongodb.png" alt=""></div>
+            <div><img src="./Image/Techstack/mysql.png" alt=""></div>
+            <div><img src="./Image/Techstack/reactjs.png" alt=""></div>
+        </div>
+        <br>
+        <h1>TOOLS</h1>
+        <div class="tech">
+            <div><img src="./Image/Toolimg/icons8-anaconda-144.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-android-studio-128.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-apache-netbeans-480.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-arduino-144.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-eclipse-logo-48.png" alt=""></div>
+            <div><img style="background-color: white; border-radius: 50%;" src="./Image/Toolimg/icons8-github-500.png"
+                    alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-intellij-idea-480.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-jupyter-144.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-postman-api-512.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-visual-studio-240.png" alt=""></div>
+            <div><img src="./Image/Toolimg/icons8-visual-studio-code-480.png" alt=""></div>
+        </div>
+
+        <br><br>
+
+        <h3>My Works</h3>
+        <h1>MY PROJECTS</h1>
+        <div class="des">
+            <p>Following projects showcase my skills and experience through real-world examples of my work. Each project
+                is
+                briefly described with links to code repositories and live demos. It reflects my ability to solve
+                complex
+                problems, work with different technologies, and manage projects effectively.</p>
+        </div>
+
+        <div class="project-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img class="project-img" src="./Image/projects-img/MAD.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Snap Report is a mobile app that allows users to search or filter and view Latest News
+                            Feeds.Reporters Create a new News feeds with various category local and worldwide.Admin
+                            Manage the reporters and News feed of the Viewrs.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Multi-Disease-Prediction.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Multi Multi-Disease-Prediction is a Website that allows users to Predict the specific disease
+                            the patient have or not using a necessary details. Users can predict Kidney disease,
+                            diabetics, Stroke, Heart Disease.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/COVD.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>COVD is a Website that allows users to Check their construction work design plans and approve
+                            or contact with the Company easily.Admin manage the plan designs and customer details and
+                            feedbacks.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/IoT.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>AHMS is a IoT based device which is helps to find the patient various health data readings
+                            using sensors.It contains Emergincy alerts, SMS alret function, Store readings cloud and SD.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Doctor-online-booking.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>DOB is a app which allows users to check Available Doctors names with
+                            which specialist is the doctor. Patient make appointments for the treatment or
+                            cancel the appointment.Admins manage the doctor & patients details & appointments.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- section2 -->
+
+        <div class="project-card">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/LMS-EAD2.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>LMS is a app which allows users to check Available Books in the Library without searching
+                            physicaly.Its helps to save the time for learning.Admins manage the Books and Members list.
+                            users pay for the collect the membership to use the app memberships delay date will give a
+                            Fine. thease details maintain by admin.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Space-game.png"></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Spaceline is mini game which allows user to enjoy with playing and earn points for the
+                            wining. </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/LMS-PDSA.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>LMS is app which allows user to search books with own accounts. Users can update profiles &
+                            manage their borrowing books and due fines. Librarians manage books, fines, and students
+                            details. Each users have separate logins and functions.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Data-Ware-house.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>This is an data analist using weka software.This analyze provide the details of the term
+                            deposite of an bank using previous details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/LMS-C.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>LMS is app which allows user to search books with own accounts. Users can update profiles &
+                            manage their borrowing books and due fines. Librarians manage books, fines, and students
+                            details. Each users have separate logins and functions.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- section 3 -->
+
+
+        <div class="project-card" style="margin-bottom: 2rem;">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/CEB-C.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>CEB is a app which allows users to Calculate the Electrical bill for various professions</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/day-care.png"></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Day care is Website for the advertisement for their company. </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Line-Following.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Line Following car used in various sectors to transport objects or humans using predife path.
+                            Its contains various sensonrs to navigate with path.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Baloon-and_Egg.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>Egg-baloon is mini game which allows user to enjoy with playing and earn points for the
+                            wining. This contain two differnt mini games with eggs and bubbles user can choose as their
+                            prefer. Users have seperate preferences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><img style="width: 210px;" class="project-img"
+                                src="./Image/projects-img/Liquid-level.png" alt=""></p>
+                        <p style="font-weight: bolder;">Hover Me For Details</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <!-- <p class="title">BACK</p> -->
+                        <p>This is Liquid level detector project which detect the level of liquid in the container. If
+                            the level low then predefined then its remove using an arm and if level correct then
+                            transport to the packing section using a trolley.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <div class="contact-container" id="contact">
+            <h3>Keep In Touch</h3>
+            <h1>Contact</h1>
+
+            <div id="Container">
+                <form id="emailForm" class="form">
+                    <div id="login-lable">Contact</div>
+                    <input class="form-content" type="text" name="from_name" placeholder="Your Name" required />
+                    <input class="form-content" type="email" name="reply_to" placeholder="Your Email" required />
+                    <textarea class="form-content" name="message" placeholder="Your Message" rows="4"
+                        required></textarea>
+                    <button type="submit">Send</button>
+                    <div id="status"></div>
+                </form>
+
+                <!-- Optional Ray Animation (SVG) -->
+                <div id="rays">
+                    <svg fill="none" viewBox="0 0 299 152" height="9em" width="18em" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="url(#paint0_linear_8_3)" d="M149.5 152H133.42L0 0H149.5H299L165.58 152H149.5Z">
+                        </path>
+                        <defs>
+                            <linearGradient id="paint0_linear_8_3" x1="149.5" y1="152" x2="150.12" y2="12.1981"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00E0FF"></stop>
+                                <stop offset="1" stop-color="#65EDFF" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="robo-container2"><spline-viewer class="robot-3d2"
+                    url="https://prod.spline.design/Yh91jEXw4YVZK-RO/scene.splinecode"></spline-viewer>
+            </div>
+
+
+            <div class="social-footer">
+                <div><a href="https://www.facebook.com/share/18uXoDpwzX/" target="_blank"><img
+                            src="./Image/SocialMedia/facebook.png" alt="facebook"></a></div>
+                <div><a href="https://github.com/Dhanushanandan" target="_blank"><img
+                            src="./Image/SocialMedia/github.png" alt="github"></a></div>
+                <div><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRrmJfrgzfwhKrcLMvrmPWjZqRmpQWJXfSrbgGtWPMKtwXgMCwFdDCGWlqBqGHhMzgsmScb"
+                        target="_blank"><img src="./Image/SocialMedia/gmail.png" alt="gmail"></a></div>
+                <div><a href="https://www.instagram.com/dhanu_1.1?igsh=cWh2OTNlN3dxbnAx" target="_blank"><img
+                            src="./Image/SocialMedia/instagram.png" alt="instagram"></a></div>
+                <div><a href="https://www.linkedin.com/in/dhanushanandan-0939262a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="./Image/SocialMedia/linkedin.png" alt="linkedin"></a></div>
+                <div><a href="https://wa.me/+94712051203" target="_blank"><img src="./Image/SocialMedia/whatsapp.png"
+                            alt="whatsapp"></a></div>
+                <div><a href="https://discord.gg/darkphoenix0748_87866" target="_blank"><img
+                            src="./Image/SocialMedia/discord.png" alt="discord"></a></div>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script> -->
+
+
+</body>
+
+</html>
+
+
+
+<!-- JavaScript to handle EmailJS -->
+<script>
+    emailjs.init("U2kzMkCrfLCiI9FHI"); // Your Public Key
+
+    document.getElementById("emailForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm("service_2qa8mxl", "template_mfheh7k", this)
+            .then(() => {
+                document.getElementById("status").innerText = "✅ Message sent!";
+                this.reset();
+            }, (error) => {
+                document.getElementById("status").innerText = "❌ Failed to send: " + error.text;
+            });
+    });
+</script>
